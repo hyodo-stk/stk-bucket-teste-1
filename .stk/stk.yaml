@@ -1,0 +1,28 @@
+schema-version: v1
+kind: manifest
+metadata:
+  name: stk-bucket-teste-1
+  description: 'teste do create shared infra para o bucket
+
+    '
+  stack-version-id: 01H8Y7EGEHH7AGFVNEYZ6PMEK5
+  stack: python-stack
+spec:
+  type: infra
+  infra-id: 01H8Y7N5NB3GFZFMBYC851578F
+  plugins:
+    - name: sandbox-hy-python/python-stack/s3-bucket-kms@0.0.7
+      plugin-version-id: 01H8Y7DWT0FP4M43NVB4PPDY50
+      stack-version-id: 01H8Y7EGEHH7AGFVNEYZ6PMEK5
+      type: infra
+      inputs:
+        bucket_name: teste 1
+        aws_region: sa-east-1
+        force_destroy: 'false'
+      inputs-envs: {}
+      connectors:
+        - name: bucket-teste-1
+          type: aws-s3-conn
+  global-inputs: {}
+  global-computed-inputs: {}
+  repository: https://github.com/hyodo-stk/stk-bucket-teste-1.git
